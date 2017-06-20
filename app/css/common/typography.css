@@ -1,7 +1,8 @@
 
 :root {
 
-  --fontMontserrat:           'Montserrat', Helvetica, Arial, sans-serif;
+  --fontMain:             'Poppins', sans-serif;
+  --fontAccent:           'Playfair Display', serif;
 
   --fontSmall:                12px;
   --fontMedium:               16px;

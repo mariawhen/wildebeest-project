@@ -1,15 +1,23 @@
 @import 'settings';
 @import 'common/layout';
+@import 'common/colors';
 @import 'common/typography';
+@import 'components/resultsheader';
+@import 'components/searchbar';
 
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display|Poppins);
 
 
 * { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: var(--fontMontserrat);
+  font-family: var(--fontMain);
+  background-color: var(--colorLightPink);
+}
+
+.header {
+  font-family: 'Playfair Display', serif;  
 }
 
 .app {
@@ -17,16 +25,6 @@ body {
   height: 100%;
   font-weight: normal;
   font-smoothing: antialiased;
+  font-family: 'Playfair Display', serif;
+  background-color: var(--colorLightPink);  
 }
-
-
-/* Add your global styles below... */
-
-/* ex:
-
-:global {
-  & .red { color: red; }
-  & .blue { color: blue; }
-}
-
-*/

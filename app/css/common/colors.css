@@ -1,7 +1,11 @@
 :root {
 
+  --colorBrightRed:           #ff5c5c;
+  --colorLightPink:           #fff4f4;
+  --colorDarkGrey:            #3e4144;
   --colorBlack:               #000;
   --colorWhite:               #fff;
+  --colorYellow:              yellow;
   --colorDodgerBlue:          #2196F3;
   --colorSalem:               #0F9D58;
   --colorDarkerSalem:         #0b6e3e;

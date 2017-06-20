@@ -4,9 +4,11 @@
 import passport from 'passport';
 import unsupportedMessage from '../db/unsupportedMessage';
 import { controllers, passport as passportConfig } from '../db';
+import SpotifyController from '../spotify-controller';
 
 const usersController = controllers && controllers.users;
 const topicsController = controllers && controllers.topics;
+const spotifyController = new SpotifyController();
 
 export default (app) => {
   // user routes
@@ -51,5 +53,9 @@ export default (app) => {
     app.delete('/topic/:id', topicsController.remove);
   } else {
     console.warn(unsupportedMessage('topics routes'));
+  }
+
+  if (spotifyController) {
+    app.get('/artists/:artistName/related', (req, res) => spotifyController.getRelatedArtistTracks(req, res))
   }
 };

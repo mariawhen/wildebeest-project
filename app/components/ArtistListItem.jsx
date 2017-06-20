@@ -16,15 +16,15 @@ class ArtistListItem extends Component {
   render() {
     return (
       <div className={cx('artist-list-item')}>
-        <div className={cx('wave')}></div>
-        <div className={cx('wave', 'two')}></div>
-        <div className={cx('wave', 'three')}></div>
+        <div className={cx('artist-list-item__wave')}></div>
+        <div className={cx('artist-list-item__wave', 'two')}></div>
+        <div className={cx('artist-list-item__wave', 'three')}></div>
 
-        <p className={cx('title')}>
+        <p className={cx('artist-list-item__title')}>
           { this.props.artist.name }
         </p>
 
-        <div className={cx('tracks-container')}>
+        <div className={cx('artist-list-item__tracks')}>
           <ul>
             { this.renderTracks() }
           </ul>

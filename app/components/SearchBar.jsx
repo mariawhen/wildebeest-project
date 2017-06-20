@@ -24,6 +24,7 @@ class SearchBar extends Component {
 				onSubmit={ event => this.onSubmit(event) }
 			>
 				<input
+					className={cx('search-bar-input')}
 					value={ this.state.term }
 					placeholder="type here"
 					onChange={ event => this.setState({ term: event.target.value}) } />

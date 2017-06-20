@@ -1,0 +1,116 @@
+@import 'common/colors';
+@import 'common/typography';
+
+/* Wave animation*/
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+.artist-list-item {
+  position: relative;
+  overflow: hidden;
+  margin: 4% 2%;
+  border-radius: 5px;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+  background-color: var(--colorLightPink);
+  width: 96%;
+  height: 300px;
+  transform: translate3d(0, 0, 0);
+}
+
+.artist-list-item:hover .artist-list-item__title{
+  transform: translateX(1%);
+  color: var(--colorWhite);
+}
+
+.artist-list-item:hover .artist-list-item__wave {
+  opacity: 0.4;
+}
+
+.artist-list-item:hover .artist-list-item__wave.two {
+  opacity: .1;
+  background: var(--colorYellow);
+}
+
+.artist-list-item:hover .artist-list-item__wave.three {
+  opacity: 0.3;
+}
+
+.artist-list-item__wave {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  z-index: -2;
+  background: var(--colorBrightRed);
+  width: 500px;
+  height: 500px;
+  margin-left: -250px;
+  margin-top: -250px;
+  transform-origin: 50% 48%;
+  border-radius: 42%;
+  transform: rotate(47deg);
+  transition: all 1.5s ease-in;
+  animation: drift 6500ms infinite linear;
+}
+
+.artist-list-item__wave.three {
+  animation: drift 9000ms infinite linear;
+}
+
+.artist-list-item__wave.two {
+  animation: drift 11000ms infinite linear;
+  background: yellow;
+}
+
+.artist-list-item__title {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  padding-left: 14%;
+  width: 100%;
+  z-index: -1;
+  line-height: 300px;
+  transform: translate3d(0, 0, 0);
+  color: var(--colorBrightRed);
+  text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: .15em;
+  font-size: 24px;
+  text-shadow: 0 1px 0 rgba(black, .1);
+  text-indent: .3em;
+  transition: transform 0.8s ease-in;
+}
+
+.artist-list-item__tracks {
+  float: right;
+  width: 45%;
+  font-family: var(--fontMain);
+  height: inherit;
+}
+
+.artist-list-item__tracks ul{
+  display: flex;
+  flex-direction: column;  
+  margin: 0;
+  list-style: none;
+  height: inherit;  
+}
+
+.artist-list-item__tracks a{
+  display: flex;  
+  flex-grow: 1;
+  align-items: center;
+  padding-left: 2rem;
+  min-height: 2.6rem;
+  color: var(--colorBrightRed);
+}
+
+.artist-list-item__tracks a:hover{
+  cursor: pointer;
+}
+
+.artist-list-item__tracks a:nth-child(odd){
+  background: #ffeff0;
+}

@@ -9,7 +9,6 @@ const cx = classNames.bind(styles);
 class ArtistList extends Component {
   renderArtistList() {
     return this.props.relatedArtists.map(artist => {
-      console.log(artist)
       return (
         <ArtistListItem artist={ artist } />
       );
@@ -19,8 +18,8 @@ class ArtistList extends Component {
   render() {
     if (this.props.relatedArtists.length) {
       return (
-        <div className={cx('search__container')}>
-          <p className={cx('search-header')}>Try these Artists...</p>
+        <div className={cx('artist-list-item')}>
+          <p className={cx('artist-list-item__header')}>Try these Artists...</p>
           <div className={cx('artist-list-item__container')}>
             { this.renderArtistList() } 
           </div>
@@ -28,9 +27,9 @@ class ArtistList extends Component {
       )
     } else {
       return (
-        <div className={cx('search-header__container')}>
-          <p className={cx('search-subheader')}>discover new music</p>
-          <p className={cx('search__initial-header')}>Search for an artist...</p>
+        <div className={cx('artist-list-item__initial-container')}>
+          <p className={cx('artist-list-item__subheader')}>discover new music</p>
+          <p className={cx('artist-list-item__initial-header')}>Search for an artist...</p>
         </div>
       )
     }
